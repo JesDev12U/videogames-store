@@ -1,0 +1,90 @@
+.wrapper {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.videogame-showcase {
+    width: 300px;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 12px;
+    position: relative;
+    z-index: 1000;
+}
+
+.swiper-container {
+    position: relative;
+    top: 30%;
+    width: 90vw;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 900;
+}
+
+.swiper-container button {
+    position: absolute;
+    top: 90%;
+    left: 50%;
+    font-size: 1.5rem;
+}
+
+.wrapper {
+    perspective: 1000px;
+}
+
+.videogame {
+    transform-style: preserve-3d;
+    width: 27.0625em;
+    height: 40.5em;
+    /*Center the book*/
+    transform-origin: 13.53125em 4.375em;
+    position: relative;
+}
+
+.videogame > div {
+    position: absolute;
+    height: 40.5em;
+}
+
+/*Positioning each side in 3D space*/
+.front {
+    width: 27.0625em;
+    background: url("./assets/img/front.jpg");
+    transform: translate3d(0, 0, 2.1875em);
+}
+
+.back {
+    width: 27.0625em;
+    background: url("./assets/img/back.jpg");
+    transform: rotateY(180deg) translate3d(0, 0, 2.1875em);
+}
+
+.side {
+    width: 4.375em;
+    transform: rotateY(-90deg) translate3d(0, 0, 2.1875em);
+    background: url("./assets/img/side.jpg");
+}
+
+.openit {
+    width: 4.375em;
+    background: #000;
+    transform: rotateY(90deg) translate3d(0, 0, 24.9em);
+    transform-origin: bottom;
+}
+
+.videogame .shadow {
+    width: 27.0625em;
+    height: 4.375em;
+    background: radial-gradient(rgba(0, 0, 0, 0.4), transparent);
+    transform: rotateX(90deg) translate3d(0, 2.1875em, -38em);
+    transform-origin: bottom;
+}
+
+.front, .back, .side {
+    background-size: cover;
+    pointer-events: none;
+}

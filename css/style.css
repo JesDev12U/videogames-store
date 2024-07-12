@@ -1,0 +1,75 @@
+html {
+    box-sizing: border-box;
+    font-family: sans-serif;
+    font-size: 16px;
+    background-color: #131313;
+}
+
+body {
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+}
+
+
+*,
+*:before,
+*after {
+    box-sizing: inherit;
+}
+
+.swiper-container button {
+    z-index: 1000;
+    cursor: pointer;
+}
+
+main {
+    position: absolute;
+    top: 10%;
+    width: 85%;
+    left: 20%;
+    height: auto;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+    color: white;
+}
+
+aside {
+    position: fixed;
+    top: 10%;
+    width: 15%;
+    height: 100vh;
+    background-color: black;
+    z-index: 10000;
+}
+
+aside nav ul {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+}
+
+aside nav ul li a {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: row;
+    color: white;
+    text-decoration: none;
+    font-size: 1.5rem;
+}
+
+aside nav ul li a > * {
+    margin-right: 20px;
+}
+
+aside nav ul li {
+    margin-top: 20px;
+}
+
+aside nav ul li a img{
+    width: 50px;
+}

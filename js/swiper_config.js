@@ -1,4 +1,4 @@
-const swiper = new Swiper(".videogame-showcase", {
+const swipers = new Swiper(".videogame-showcase", {
   effect: "coverflow",
   grabCursor: true,
   centeredSlides: true,
@@ -11,6 +11,8 @@ const swiper = new Swiper(".videogame-showcase", {
     stretch: 0,
   },
 });
+
+console.log(swipers);
 
 //Creamos un manejador para hacer una misma referencia al listener
 function createMouseOverHandler(videogame) {
@@ -26,35 +28,40 @@ function createMouseLeaveHandler(videogame) {
 }
 
 function videogamesSlide() {
-  swiper.slides.forEach((slide, index) => {
-    let $videogame = slide.querySelector(".videogame");
+  swipers.forEach((swiper, i) => {
+    swiper.slides.forEach((slide, index) => {
+      let $videogame = slide.querySelector(".videogame");
 
-    // Remueve los eventos antes de añadirlos para evitar duplicados
-    if ($videogame.mouseOverHandler) {
-      $videogame.removeEventListener("mouseover", $videogame.mouseOverHandler);
-    }
-    if ($videogame.mouseLeaveHandler) {
-      $videogame.removeEventListener(
-        "mouseleave",
-        $videogame.mouseLeaveHandler
-      );
-    }
+      // Remueve los eventos antes de añadirlos para evitar duplicados
+      if ($videogame.mouseOverHandler) {
+        $videogame.removeEventListener(
+          "mouseover",
+          $videogame.mouseOverHandler
+        );
+      }
+      if ($videogame.mouseLeaveHandler) {
+        $videogame.removeEventListener(
+          "mouseleave",
+          $videogame.mouseLeaveHandler
+        );
+      }
 
-    if (index === swiper.realIndex) {
-      // Solo el slide activo debería tener habilitado el efecto de girar
-      $videogame.mouseOverHandler = createMouseOverHandler($videogame);
-      $videogame.mouseLeaveHandler = createMouseLeaveHandler($videogame);
-      $videogame.addEventListener("mouseover", $videogame.mouseOverHandler);
-      $videogame.addEventListener("mouseleave", $videogame.mouseLeaveHandler);
-      document.getElementById("btn-buy").dataset.videogame = swiper.realIndex;
-    } else {
-      mouseLeaveVideogame($videogame);
-    }
+      if (index === swiper.realIndex) {
+        // Solo el slide activo debería tener habilitado el efecto de girar
+        $videogame.mouseOverHandler = createMouseOverHandler($videogame);
+        $videogame.mouseLeaveHandler = createMouseLeaveHandler($videogame);
+        $videogame.addEventListener("mouseover", $videogame.mouseOverHandler);
+        $videogame.addEventListener("mouseleave", $videogame.mouseLeaveHandler);
+        document.querySelectorAll(".btn-buy")[i].dataset.videogame =
+          swiper.realIndex;
+      } else {
+        mouseLeaveVideogame($videogame);
+      }
+    });
+    swiper.on("slideChange", () => {
+      videogamesSlide();
+    });
   });
 }
 
 videogamesSlide();
-
-swiper.on("slideChange", () => {
-  videogamesSlide();
-});

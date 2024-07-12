@@ -1,5 +1,7 @@
-const btnBuy = document.getElementById("btn-buy");
+const btnsBuy = document.querySelectorAll(".btn-buy");
 
-btnBuy.addEventListener("click", function () {
-  alert(this.dataset.videogame);
+btnsBuy.forEach((btnBuy) => {
+  btnBuy.addEventListener("click", function () {
+    alert(this.dataset.videogame);
+  });
 });

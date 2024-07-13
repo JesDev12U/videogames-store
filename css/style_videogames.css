@@ -28,7 +28,7 @@
 
 .swiper-container button {
     position: absolute;
-    top: 105%;
+    top: 100%;
     left: 50%;
     font-size: 1.5rem;
 }

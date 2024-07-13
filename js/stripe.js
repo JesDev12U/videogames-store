@@ -71,6 +71,8 @@ Promise.all([
         $videogame.dataset.side = `./assets/img/playstation/${platform.toLowerCase()}/${videogame
           .toLowerCase()
           .trim()}/side.jpg`;
+        $videogame.dataset.id =
+          playstationObject[platform][videogame].default_price;
         $clonePlatform
           .querySelector(".swiper-wrapper")
           .appendChild($cloneSlide);
@@ -185,8 +187,8 @@ Promise.all([
               "mouseleave",
               $videogame.mouseLeaveHandler
             );
-            //document.querySelectorAll(".btn-buy")[i].dataset.videogame =
-            //swiper.realIndex;
+            document.querySelectorAll(".btn-buy")[i].dataset.videogame =
+              $videogame.dataset.id;
           } else {
             mouseLeaveVideogame($videogame);
           }
@@ -198,6 +200,26 @@ Promise.all([
     }
 
     videogamesSlide();
+
+    const btnsBuy = document.querySelectorAll(".btn-buy");
+
+    btnsBuy.forEach((btnBuy) => {
+      btnBuy.addEventListener("click", function () {
+        //alert(this.dataset.videogame);
+        Stripe(stripe_keys.public)
+          .redirectToCheckout({
+            lineItems: [{ price: this.dataset.videogame, quantity: 1 }],
+            mode: "payment",
+            successUrl: "http://127.0.0.1:5500/index.html",
+            cancelUrl: "http://127.0.0.1:5500/index.html",
+          })
+          .then((res) => {
+            if (res.error) {
+              alert(res.error.message);
+            }
+          });
+      });
+    });
   })
   .catch((err) => {
     console.error(err);

@@ -24,7 +24,6 @@
         <ul>
           <li><a href="">PlayStation</a></li>
           <li><a href="">Xbox</a></li>
-          <li><a href="">Nintendo</a></li>
         </ul>
       </nav>
     </header>
@@ -58,150 +57,30 @@
         </ul>
       </nav>
     </aside>
-    <main>
+    <main></main>
+    <template class="tem-swiper-container">
       <div class="swiper-container">
         <section class="videogame-showcase">
-          <div class="swiper-wrapper">
-            <div class="swiper-slide">
-              <div class="wrapper">
-                <div
-                  class="videogame"
-                  data-front="./assets/img/front.jpg"
-                  data-back="./assets/img/back.jpg"
-                  data-side="./assets/img/side.jpg"
-                >
-                  <div class="front"></div>
-                  <div class="side"></div>
-                  <div class="back"></div>
-                  <div class="openit"></div>
-                  <div class="shadow"></div>
-                </div>
-              </div>
-            </div>
-            <div class="swiper-slide">
-              <div class="wrapper">
-                <div
-                  class="videogame"
-                  data-front="./assets/img/front.jpg"
-                  data-back="./assets/img/back.jpg"
-                  data-side="./assets/img/side.jpg"
-                >
-                  <div class="front"></div>
-                  <div class="side"></div>
-                  <div class="back"></div>
-                  <div class="openit"></div>
-                  <div class="shadow"></div>
-                </div>
-              </div>
-            </div>
-            <div class="swiper-slide">
-              <div class="wrapper">
-                <div
-                  class="videogame"
-                  data-front="./assets/img/front.jpg"
-                  data-back="./assets/img/back.jpg"
-                  data-side="./assets/img/side.jpg"
-                >
-                  <div class="front"></div>
-                  <div class="side"></div>
-                  <div class="back"></div>
-                  <div class="openit"></div>
-                  <div class="shadow"></div>
-                </div>
-              </div>
-            </div>
-            <div class="swiper-slide">
-              <div class="wrapper">
-                <div
-                  class="videogame"
-                  data-front="./assets/img/front.jpg"
-                  data-back="./assets/img/back.jpg"
-                  data-side="./assets/img/side.jpg"
-                >
-                  <div class="front"></div>
-                  <div class="side"></div>
-                  <div class="back"></div>
-                  <div class="openit"></div>
-                  <div class="shadow"></div>
-                </div>
-              </div>
-            </div>
-          </div>
+          <div class="swiper-wrapper"></div>
         </section>
         <button class="btn-buy" data-videogame="">Comprar</button>
       </div>
-      <div class="swiper-container">
-        <section class="videogame-showcase">
-          <div class="swiper-wrapper">
-            <div class="swiper-slide">
-              <div class="wrapper">
-                <div
-                  class="videogame"
-                  data-front="./assets/img/front.jpg"
-                  data-back="./assets/img/back.jpg"
-                  data-side="./assets/img/side.jpg"
-                >
-                  <div class="front"></div>
-                  <div class="side"></div>
-                  <div class="back"></div>
-                  <div class="openit"></div>
-                  <div class="shadow"></div>
-                </div>
-              </div>
-            </div>
-            <div class="swiper-slide">
-              <div class="wrapper">
-                <div
-                  class="videogame"
-                  data-front="./assets/img/front.jpg"
-                  data-back="./assets/img/back.jpg"
-                  data-side="./assets/img/side.jpg"
-                >
-                  <div class="front"></div>
-                  <div class="side"></div>
-                  <div class="back"></div>
-                  <div class="openit"></div>
-                  <div class="shadow"></div>
-                </div>
-              </div>
-            </div>
-            <div class="swiper-slide">
-              <div class="wrapper">
-                <div
-                  class="videogame"
-                  data-front="./assets/img/front.jpg"
-                  data-back="./assets/img/back.jpg"
-                  data-side="./assets/img/side.jpg"
-                >
-                  <div class="front"></div>
-                  <div class="side"></div>
-                  <div class="back"></div>
-                  <div class="openit"></div>
-                  <div class="shadow"></div>
-                </div>
-              </div>
-            </div>
-            <div class="swiper-slide">
-              <div class="wrapper">
-                <div
-                  class="videogame"
-                  data-front="./assets/img/front.jpg"
-                  data-back="./assets/img/back.jpg"
-                  data-side="./assets/img/side.jpg"
-                >
-                  <div class="front"></div>
-                  <div class="side"></div>
-                  <div class="back"></div>
-                  <div class="openit"></div>
-                  <div class="shadow"></div>
-                </div>
-              </div>
-            </div>
+    </template>
+    <template class="tem-swiper-slide">
+      <div class="swiper-slide">
+        <div class="wrapper">
+          <div class="videogame" data-front="" data-back="" data-side="">
+            <div class="front"></div>
+            <div class="side"></div>
+            <div class="back"></div>
+            <div class="openit"></div>
+            <div class="shadow"></div>
           </div>
-        </section>
-        <button class="btn-buy" data-videogame="">Comprar</button>
+        </div>
       </div>
-    </main>
+    </template>
+    <script src="https://js.stripe.com/v3/"></script>
+    <script src="./js/stripe.js" type="module"></script>
     <script src="./js/animation.js"></script>
     <script src="./js/swiper_config.js"></script>
     <script src="./js/script.js"></script>

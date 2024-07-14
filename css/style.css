@@ -26,6 +26,19 @@ body {
 main {
     position: absolute;
     top: 10%;
+    width: 100vw;
+    height: auto;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+    color: white;
+}
+
+/* main {
+    position: absolute;
+    top: 10%;
     width: 85%;
     left: 20%;
     height: auto;
@@ -72,4 +85,4 @@ aside nav ul li {
 
 aside nav ul li a img{
     width: 50px;
-}
+} */
